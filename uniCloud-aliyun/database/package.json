@@ -1,0 +1,7 @@
+{
+  "name": "database",
+  "dependencies": {
+    "quill-delta-converter": "file:../../uni_modules/uni-cms/uniCloud/cloudfunctions/common/quill-delta-converter"
+  },
+  "extensions": {}
+}

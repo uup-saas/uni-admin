@@ -1,6 +1,6 @@
 {
     "name" : "uni-admin",
-    "appid" : "__UNI__5DE3D26",
+    "appid" : "__UNI__D322073",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -73,6 +73,12 @@
         "router" : {
             "mode" : "hash",
             "base" : "/admin/"
+        },
+        "title" : "笔袋后台管理",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
         }
     },
     "vueVersion" : "2",

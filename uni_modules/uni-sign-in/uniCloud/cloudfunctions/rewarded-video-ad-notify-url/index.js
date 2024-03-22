@@ -2,28 +2,7 @@
 const uniADConfig = require('uni-config-center')({
 	pluginId: 'uni-ad'
 }).config()
-const signIn = require('sign-in')
 let ip = null
-async function nextFn(data) {
-	//写自己的业务逻辑
-	switch (data.extra) {
-		case "uniSignIn": //签到
-			let {
-				user_id
-			} = data;
-			await signIn({
-				user_id,
-				ip
-			})
-			break;
-		default:
-			break;
-	}
-	return {
-		"isValid": true //如果不返回，广点通会2次调用本云函数
-	}
-}
-
 const crypto = require('crypto');
 const db = uniCloud.database();
 exports.main = async (event, context) => {
@@ -53,12 +32,7 @@ exports.main = async (event, context) => {
 		return null;
 	}
 	//自己的逻辑
-	try {
-		return await nextFn(data)
-	} catch (e) {
-		console.error(e)
-		return {
-			"isValid": false
-		}
+	return {
+		"isValid": true
 	}
 };
